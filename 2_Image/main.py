@@ -4,16 +4,16 @@ import base64
 from openai import OpenAI
 from dotenv import load_dotenv
 
-# vlm used by hf inference provider :  Qwen/Qwen2.5-VL-7B-Instruct
+# vlm used by nebius inference api = Qwen/Qwen2.5-VL-72B-Instruct
 
 load_dotenv("E:\CODE\RAG\.env")
 
 client = OpenAI(
-    base_url="https://router.huggingface.co/v1",
-    api_key=os.environ["HF_TOKEN_VLM"]
+    base_url="https://api.tokenfactory.nebius.com/v1/",
+    api_key=os.environ["NEBIUS_API_KEY"]
 )
 
-MODEL_NAME = "Qwen/Qwen2.5-VL-7B-Instruct"
+MODEL_NAME = "Qwen/Qwen2.5-VL-72B-Instruct"
 
 
 def extract_images_and_context(markdown_path):
